@@ -1,0 +1,160 @@
+package summerwork;
+import java.util.*;
+public class summerex2 {
+	static Scanner read= new Scanner(System.in);
+	public static void main(String[] args) {
+		System.out.println("Enter first candidate serial number and height"); // receiving metrics of the first candidate
+		int serial= read.nextInt();
+		int height= read.nextInt();
+		System.out.println("Enter second candidate serial number and height"); // receiving metrics of the second candidate
+
+
+		int serial2= read.nextInt();
+		int height2= read.nextInt();
+
+		while(serial!=-1) {
+
+			System.out.println("The serial number of the first candidate: " + serial + " The height of the first candidate: " + height+ "cm");
+			System.out.println("The serial number of the second candidate: " + serial2 + " The height of the second candidate: " + height2+ "cm");
+
+			System.out.println("Enter serial number and height"); 
+			serial= read.nextInt();
+			height= read.nextInt();
+			serial2 = read.nextInt();
+			height2= read.nextInt();
+
+		}
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+package summerwork;
+import java.util.*;
+public class summerex3 {
+	static Scanner read= new Scanner(System.in);
+	public static void main(String[] args) {
+		int deliverycount=0;
+		double sum=0;
+		int boxes=0;
+		boolean payfordelivery= false;
+
+
+		for(int i=0; i<4790; i++) // The number of clients is 4790
+		{
+			System.out.println("Enter amount of boxes");
+			boxes=read.nextInt();
+
+			if(boxes<4)
+			{
+				payfordelivery= true;
+				deliverycount++;
+			}
+
+			if(payfordelivery==true) // checking if the client has purchased less than 4 boxes
+			{
+				System.out.println( "The price for the drinks is "+ (boxes*35 + 10));
+			}                
+			else // a different price for people buying more than 4 boxes
+			{
+				sum += 35*boxes;
+				System.out.println("The price for the drinks is " + boxes*35);
+
+			}
+
+			payfordelivery=false;
+		}
+
+		System.out.println("The number of clients that paid for delivery is " + deliverycount + "clients");
+		System.out.println("The average price paid for drinks with no delivery is " + sum/(4790-deliverycount));
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package summerwork;
+import java.util.*;
+public class summerex4 {
+	static Scanner read= new Scanner(System.in);
+	public static void main(String[] args) {
+
+		int birthyear=0;
+		char bloodtype = 0;
+		int ocount=0;
+		int youngdonorcount=0;
+
+		for(int i=0; i<275; i++)
+		{
+			System.out.println("Enter birth year");
+			birthyear=read.nextInt();
+			System.out.println("Enter blood type");
+			bloodtype=read.next().charAt(0);
+
+			System.out.println("The donor information: " + '\n' +  "Blood type: " +  bloodtype + '\n' + " Birth year: " + birthyear);
+
+			if(bloodtype == 'O') {
+				ocount++;
+			}
+
+			if(birthyear>2000) {
+				youngdonorcount++;
+			}
+
+		}
+		System.out.println("The numbers of donors with O blood type: " + ocount);
+		System.out.println("The number of donors born after the year 2000: " + youngdonorcount);
+	} 
+
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package summerwork;
+import java.util.*;
+public class summerex5 {
+	static Scanner read= new Scanner(System.in);
+	public static void main(String[] args) {
+		System.out.println("Enter computer science grade");
+		int csgrade=read.nextInt();
+		System.out.println("Enter Math grade");
+		int mathgrade=read.nextInt();
+		int csgod=0;
+		int mathgod=0;
+		double cssum=0;
+		double mathsum=0;
+		double gradecounter=0;
+
+		while(csgrade!=-1 && mathgrade !=-1)
+		{
+
+			if(csgrade>mathgrade)
+			{
+				csgod++;
+			}
+
+			if(mathgrade>csgrade)
+			{
+				mathgod++;
+			}
+
+
+			cssum+=csgrade;
+			mathsum+=mathgrade;
+			gradecounter+=2;
+
+
+			System.out.println("Enter computer science grade and math grade");
+			csgrade= read.nextInt();
+			mathgrade= read.nextInt();
+		}
+
+		System.out.println("The average computer science grade is " + (cssum/(gradecounter/2)));
+		System.out.println("The average math grade is " + (mathsum/(gradecounter/2)));
+		System.out.println("The average grade for both subjects is " + (cssum+mathsum)/gradecounter );
+
+
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
