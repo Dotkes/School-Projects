@@ -14,7 +14,7 @@ public class functionsEx1 {
 	public static void main(String[] args) {
 		int number;
 
-		for(int i=1; i<=10; i++) { // run 10 times
+		for(int i=1; i<=10; i++) { 
 			System.out.println("Enter a natural number");
 			number=read.nextInt();
 			System.out.println("Number " + i +  " has " + numDigit(number) + " digits"); // print serial number and digit count
@@ -38,7 +38,7 @@ public class functionsEx2 {
 			sum+=num%10;
 			num/=10;
 		}
-		return sum; // re
+		return sum; 
 	}
 
 	public static void main(String[] args) {
@@ -60,7 +60,7 @@ public class functionsEx2 {
 
 
 		}
-		System.out.println("The number with the highest digit sum: " + maxnum + " With the digit sum of: " +maxsum ); // print the number with most digits and the digit count
+		System.out.println("The number with the highest digit sum: " + maxnum + " With the digit sum of: " +maxsum ); 
 
 
 	}
@@ -142,7 +142,7 @@ public class functionsEx4 {
 
 	public static void main(String[] args) {
 
-		for(int i=20; i<=40; i++) {
+		for(int i=20; i<=40; i++) { // numbers between 20 and 40
 			System.out.println(numFlipper(i));
 		}
 
