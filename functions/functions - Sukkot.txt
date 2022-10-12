@@ -1,0 +1,152 @@
+package functions;
+import java.util.Scanner;
+public class functionsEx1 {
+	static Scanner read=new Scanner(System.in);
+	public static int numDigit(int num) {
+		int count=0;
+		while(num>0) {
+			count++;
+			num/=10;
+		}
+		return count;  // returns number of digits
+	}
+
+	public static void main(String[] args) {
+		int number;
+
+		for(int i=1; i<=10; i++) { // run 10 times
+			System.out.println("Enter a natural number");
+			number=read.nextInt();
+			System.out.println("Number " + i +  " has " + numDigit(number) + " digits"); // print serial number and digit count
+		}
+
+	}
+
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+package functions;
+import java.util.Scanner;
+public class functionsEx2 {
+	static Scanner read= new Scanner(System.in);
+
+	public static int sumDigit(int num) {
+		int sum=0;
+		while(num>0) {
+			sum+=num%10;
+			num/=10;
+		}
+		return sum; // re
+	}
+
+	public static void main(String[] args) {
+		int maxsum=0;
+		int numsum=0;
+		int maxnum=0;
+		System.out.println("Enter a natural number");
+		int number=read.nextInt();
+		while(number!=0) {
+			System.out.println(sumDigit(number)); // print digit sum of (number)
+			numsum= sumDigit(number);
+			if(numsum>maxsum) { // checking if the new number has more digits than last max
+				maxsum=numsum;
+				maxnum=number;
+			}
+			System.out.println("Enter a natural number");
+			number=read.nextInt();
+
+
+
+		}
+		System.out.println("The number with the highest digit sum: " + maxnum + " With the digit sum of: " +maxsum ); // print the number with most digits and the digit count
+
+
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package functions;
+import java.util.Scanner;
+public class functionsex3 {
+	static Scanner read= new Scanner(System.in);
+
+	public static int numDigit(int num) {
+		int count=0;
+		while(num>0) {
+			count++;
+			num/=10;
+		}
+		return count;
+	}
+
+	public static int sumDigit(int num) {
+		int sum=0;
+		while(num>0) {
+			sum+=num%10;
+			num/=10;
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
+
+		int digcount1=1, digcount2=0, firstsum=0, secondsum=0, couplecount=0;
+		int number1, number2;
+
+		while(digcount1 != digcount2 || firstsum != secondsum ) { // Requested boolean expression
+
+			System.out.println("Enter first natural number");
+			number1=read.nextInt();
+			System.out.println("Enter second natural number");
+			number2=read.nextInt();
+
+			digcount1= numDigit(number1); // Running numDigit on num1
+			digcount2= numDigit(number2); // Running numDigit on num2
+
+			firstsum= sumDigit(number1); // Running sumDigit on num1
+			secondsum=sumDigit(number2); // Running sumDigit on num2
+
+			if(digcount1 != digcount2 || firstsum != secondsum)
+				couplecount++;
+			System.out.println("The absolute difference between the digit sum of both numbers is: " + Math.abs(firstsum-secondsum));
+
+
+		}
+
+		System.out.println("Number of couples received until the digit sum and digit count is equal: " +couplecount); 
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+package functions;
+import java.util.Scanner;
+public class functionsEx4 {
+	static Scanner read= new Scanner(System.in);
+
+	public static int numFlipper(int num) {
+		int flippedNum=0;
+		flippedNum+=num*100; 
+		flippedNum+=num%10*10; 
+		flippedNum+=(num/10); 
+
+		return flippedNum;
+	}
+
+
+	public static void main(String[] args) {
+
+		for(int i=20; i<=40; i++) {
+			System.out.println(numFlipper(i));
+		}
+
+
+	}
+
+}
